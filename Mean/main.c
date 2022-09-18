@@ -10,19 +10,18 @@
 #include <stdint.h>
 
 int main() {
-//uint_fast8_t
-  int listSize,seed;
-  int total = 0;
+  uint_fast16_t listSize,seed;
+  uint_fast64_t total = 0;
   size_t i;
   printf("Enter an integer for size of list: ");
-  scanf("%d",&listSize);
+  scanf("%hd",&listSize);
   printf("Enter Seed: ");
-  scanf("%d",&seed);
+  scanf("%hd",&seed);
   srand(seed);
 //  int_fast16_t
-  int randList[listSize];
+  uint_fast32_t randList[listSize];
   for(i=0;i<listSize;i++){
-    int temp = rand();
+    uint_fast32_t temp = rand(); // returns int [0,RAND_MAX]. RAND_MAX is 2^31-1 on this machine, which is same as INT_MAX
     printf("%d",temp);
     printf("\n");
     randList[i] = temp;
