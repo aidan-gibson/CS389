@@ -18,7 +18,6 @@ int main() {
   printf("Enter Seed: ");
   scanf("%hd",&seed);
   srand(seed);
-//  int_fast16_t
   uint_fast32_t randList[listSize];
   for(i=0;i<listSize;i++){
     uint_fast32_t temp = rand(); // returns int [0,RAND_MAX]. RAND_MAX is 2^31-1 on this machine, which is same as INT_MAX
@@ -28,7 +27,8 @@ int main() {
     total+=temp;
   }
   printf("Mean is: ");
-  double mean = (double) total/listSize;
+  float mean = (float) total/listSize;
   printf("%f",mean);
   return 0;
 }
+//TODO release memory anywhere? check w valgrind? etc
