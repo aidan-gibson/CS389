@@ -31,4 +31,3 @@ int main() {
   printf("%f",mean);
   return 0;
 }
-//TODO release memory anywhere? check w valgrind? etc
