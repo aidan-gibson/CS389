@@ -1,12 +1,6 @@
 
-(b) (8 points) Port to C. Port this benchmark to C, as closely as possible to the Python version. You may use any standard library functions. Repeat the above measurements and create a new graph that adds the C line to the Python line.
-You may find that you can run many more iterations now, and perhaps larger object counts. Explain any parameter changes you make and demonstrate how it’s better (or worse) than before.
-To time a function in C, you can use clock gettime (with the CLOCK MONOTONIC argument). Since you’re using a different random number generator now, you’ll probably have different initial values and therefore a different checksum than the Python version. That’s fine, as long as you’re getting the same checksum from run to run.
-(c) (3 points) Comparing Types. Compare your C implementation using different C types: float, double, int8 t, int16 t, int32 t, int64 t for the coordinate and velocity types in terms of performance. Report your findings.
-Note: the checksum will probably not be computed correctly for the integral types due to precision loss. That’s OK, though: we’re only interested in the performance trade-offs.
 
 
-a)
 ```sh
 ~/CLionProjects/CS389/A2 Galaxy Explorers master*
 ❯ python update_locations.py 28 10000
@@ -54,3 +48,15 @@ b)
 This time with a logarithmic y-axis. I kept parameters fixed for a proper comparison. The C++ code is 3-4x orders of magnitude faster.
 
 ![pythonc.png](pythonc.png)
+
+c)
+
+Used `main.cpp` for double, `float.cpp` for float, `int64.cpp` for int64_t, int32_t, and int16_t (used find and replace to swap types), and `int8.cpp` for int8_t.
+
+![all](all.png)
+
+Upon running the different parameters in terminal I copied them into a spreadsheet (`A2.numbers`); also exported to `A2.csv` for convenience.
+
+
+
+All tested data types had a wider spread with a lower object count, but converged around the same point with the max object count of 224.
