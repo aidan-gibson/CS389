@@ -1,3 +1,11 @@
+Relevant Files:
+
+`Makefile`
+
+`main.cpp`
+
+
+
 a) I used 28,56,112,224 as my object count parameters as suggested by the instructions. 
 
 I chose 10,000 as iterations/game turns parameter as I needed a high enough number to rule out statistical noise and that was the number that started to add a noticable lag when running the program.
@@ -14,7 +22,7 @@ This time with a logarithmic y-axis. I kept parameters fixed for a proper compar
 
 c)
 
-Used `main.cpp` for double, `float.cpp` for float, `int64.cpp` for int64_t, int32_t, and int16_t (used find and replace to swap types), and `int8.cpp` for int8_t.
+Used `main.cpp` for double, `float.cpp` for float, `int64.cpp` for int64_t, int32_t, and int16_t (used find and replace to swap types), and `int8.cpp` for int8_t. Divergences from main.cpp are minor.
 
 ![all](all.png)
 
