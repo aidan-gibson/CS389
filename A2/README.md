@@ -1,3 +1,40 @@
+a) I used 28,56,112,224 as my object count parameters as suggested by the instructions. 
+
+I chose 10,000 as iterations/game turns parameter as I needed a high enough number to rule out statistical noise and that was the number that started to add a noticable lag when running the program.
+
+
+
+![python.png](python.png)
+
+b)
+
+This time with a logarithmic y-axis. I kept parameters fixed for a proper comparison. The C++ code is 3-4x orders of magnitude faster.
+
+![pythonc.png](pythonc.png)
+
+c)
+
+Used `main.cpp` for double, `float.cpp` for float, `int64.cpp` for int64_t, int32_t, and int16_t (used find and replace to swap types), and `int8.cpp` for int8_t.
+
+![all](all.png)
+
+Upon running the different parameters in terminal I copied them into a spreadsheet (`A2.numbers`); also exported to `A2.csv` for convenience.
+
+
+
+All tested data types had a wider spread with a lower object count, but converged around the same point with the max object count of 224.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -27,36 +64,3 @@ Final checksum is: -36624.59717058417
 svmem(total=34359738368, available=6732349440, percent=80.4, used=9509666816, free=65175552, active=6681853952, inactive=6650560512, wired=2827812864)
 ```
 
-# TODO 
-KO CMAKE )))): makefile ONLY
-make sure i have the "clean" command and all that other bullshit
-
-
-
-
-
-a) I used 28,56,112,224 as my object count parameters as suggested by the instructions. 
-
-I chose 10,000 as iterations/game turns parameter as I needed a high enough number to rule out statistical noise and that was the number that started to add a noticable lag when running the program.
-
-
-
-![python.png](python.png)
-
-b)
-
-This time with a logarithmic y-axis. I kept parameters fixed for a proper comparison. The C++ code is 3-4x orders of magnitude faster.
-
-![pythonc.png](pythonc.png)
-
-c)
-
-Used `main.cpp` for double, `float.cpp` for float, `int64.cpp` for int64_t, int32_t, and int16_t (used find and replace to swap types), and `int8.cpp` for int8_t.
-
-![all](all.png)
-
-Upon running the different parameters in terminal I copied them into a spreadsheet (`A2.numbers`); also exported to `A2.csv` for convenience.
-
-
-
-All tested data types had a wider spread with a lower object count, but converged around the same point with the max object count of 224.
